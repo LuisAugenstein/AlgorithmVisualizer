@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <div id="headline">Algorithm Visualizer</div>
+        <img src="./img/Card Menü.svg" alt="" id="menue">
+    </div>
+
+    <div id="sidebar">
+        <a href="">Bézier Curve</a>
+        <a href="">Path Finding</a>
+        <a href="">Sorting</a>
+        <a href="">Planar Seperator</a>
+        <a href="">Matching</a>
+        <a href="">Mixed-Max-Cut</a>
+        <a href="">Menger</a>
+    </div>
+
+    <div id="content">
+        <div id="main-window-container">
+            <canvas id="main-window"></canvas>
+        </div>
+        <div id="control-bar">
+            <div class="btn" id="create-button">new Point</div>
+            <div class="btn" id="remove-button">remove</div>
+            <div id="t-text">t = 0.5</div>
+            <input type="range" min="0" max="1000" id="slider">
+        </div>
+    </div>
+
+    <script src="./js/Geometry.js"></script>
+    <script src="./js/Canvas.js"></script>
+    <script src="./js/General.js"></script>
+    <script src="./js/Bezier.js"></script>
+</body>
+
+</html>

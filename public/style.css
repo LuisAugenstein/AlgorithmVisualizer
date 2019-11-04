@@ -1,0 +1,150 @@
+html {
+    box-sizing: border-box;
+}
+
+:root {
+    --base-color: rgb(80, 85, 95);
+    --background-color: #E9E4DC;
+    --foreground-color: #FEB341;
+    --highlight-color: rgb(255, 234, 202);
+}
+
+body {
+    background: var(--base-color);
+    min-width: 320px;
+}
+
+#header {
+    height: 60px;
+    margin: 0px 20px;
+    display: grid;
+    grid-template-columns: 20px auto 20px;
+    grid-template-areas: ". headline menue";
+    grid-gap: 15px;
+    align-items: center;
+}
+
+#headline {
+    color: var(--foreground-color);
+    font-size: 24px;
+    grid-area: headline;
+    justify-self: center;
+    user-select: none;
+}
+
+#menue {
+    grid-area: menue;
+    justify-self: end;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    padding-top: 20px;
+    background: var(--foreground-color);
+    top: 60px;
+    right: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+#sidebar a {
+    margin-left: 10px;
+    padding: 8px 8px 8px 18px;
+    border-left: 2px solid var(--base-color);
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--base-color);
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+#sidebar a:hover {
+    border-left: 2px solid var(--background-color);
+    color: var(--highlight-color);
+}
+
+@media (min-width: 700px) {
+    #content {
+        display: grid;
+        grid-template-columns: auto 300px;
+        margin: 0px 40px;
+        padding-bottom: 40px;
+        grid-gap: 40px;
+        height: calc(100vh - 100px);
+    }
+}
+
+@media (max-width: 699px) {
+    #content {
+        margin: 0px 20px;
+        display: grid;
+        grid-template-rows: auto 130px;
+        grid-gap: 20px;
+        height: calc(100vh - 60px);
+    }
+}
+
+#main-window-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#main-window {
+    background: var(--background-color);
+    z-index: -1;
+}
+
+.point {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+}
+
+#control-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 30px 30px;
+    grid-template-areas: "create remove" "text ." "slider slider";
+    grid-gap: 20px;
+}
+
+.btn {
+    border: 1px solid var(--foreground-color);
+    color: var(--foreground-color);
+    font-size: 24px;
+    text-align: center;
+    user-select: none;
+}
+
+.btn:hover {
+    color: var(--highlight-color);
+    border: 1px solid var(--highlight-color);
+}
+
+#t-text {
+    color: var(--foreground-color);
+    font-size: 24px;
+}
+
+#slider {
+    grid-area: slider;
+    -webkit-appearance: none;
+    height: 2px;
+    background: var(--foreground-color);
+}
+
+#slider::-moz-range-thumb {
+    width: 15x;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--foreground-color);
+    border: none;
+}
