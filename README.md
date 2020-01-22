@@ -1,4 +1,4 @@
 # AlgorithmVisualizer
-try it out under <a href='https://algorithmvisualizer.herokuapp.com'>hallo</a>
+try it out: <a href='https://algorithmvisualizer.herokuapp.com'>algorithm visualizer</a>
 
 only bezier-curve visualizer is implemented yet
